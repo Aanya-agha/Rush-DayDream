@@ -1,0 +1,146 @@
+[gd_scene load_steps=21 format=3 uid="uid://5xn1gwhul6we"]
+
+[ext_resource type="Texture2D" uid="uid://snxep432l8ny" path="res://pixeladvaentureassets/Items/Fruits/Strawberry.png" id="1_aaee6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aunry"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2dt6"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p7tk"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6intj"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqlha"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jin6m"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3put2"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuvcn"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly3wo"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo7xh"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb1ac"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgpcg"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jhng"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv7su"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dmmj"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvgtu"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f2tl"]
+atlas = ExtResource("1_aaee6")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmnbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aunry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2dt6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p7tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6intj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqlha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jin6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3put2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuvcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly3wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo7xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb1ac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgpcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jhng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv7su")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dmmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvgtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f2tl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pukjq"]
+radius = 5.0
+
+[node name="strawberry collect" type="Area2D"]
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qmnbk")
+autoplay = "default"
+frame_progress = 0.270397
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pukjq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dirnifirko7ho"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_csqde"]
+
+[node name="killzone" type="Area2D"]
+collision_mask = 2
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_csqde")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
